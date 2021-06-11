@@ -416,6 +416,25 @@
 
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
+  <script>
+    $('form.contactForm').submit((e)=>{
+        e.preventDefault()
+        $.ajax({
+            url:"https://script.google.com/macros/s/AKfycbzEtHOUBd4fMB2opa_2qquoMF5mjc3PGGIJkNep/exec",
+            data:$('form.contactForm').serialize(),
+            method:"post",
+            success:function (response){
+                alert("Form submitted successfully")
+                window.location.reload()
+                //window.location.href="https://google.com"
+            },
+            error:function (err){
+                alert("Something Error")
+
+            }
+        })
+    })
+</script>
  
 </body>
 
